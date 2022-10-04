@@ -8,7 +8,7 @@ type Props = {
 export const ContentContainer = ({ children }: Props) => {
   return (
     <Container>
-      <div> { children } </div>
+      <Content> { children } </Content>
     </Container>
   )
 }
@@ -16,11 +16,12 @@ export const ContentContainer = ({ children }: Props) => {
 const Container = styled.div`
   display: flex;
   flex: 1;
-  color: #f0f0f7;
-  
-  & div {
-    height: 100%;
-    width: 80%;
-    margin: 0 auto;
-  }
+  padding: 20px 0;
+  //background-color: rebeccapurple;
 `
+const Content = styled.div`
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  //background-color: yellowgreen;
+`;

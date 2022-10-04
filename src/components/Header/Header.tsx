@@ -26,7 +26,7 @@ export const Header = () => {
 
 const StHeader = styled.header`
   display: flex;
-  height: 60px;
+  min-height: 60px;
   width: 100%;
   border-bottom: 1px solid #c8c8c8;
 `;

@@ -25,7 +25,7 @@ export const Card = ({ title, description, price, img }: Partial<Props>) => {
   return (
     <Container>
       <img src={img}
-           alt={'Green Spikes'}
+           alt={title}
            width={200}
            height={200}
       />

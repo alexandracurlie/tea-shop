@@ -1,15 +1,15 @@
 import React from 'react';
 import { Header } from './components/Header/Header';
-import { ContentContainer } from './components/ContentContainer/ContentContainer';
 import { Footer } from './components/Footer/Footer';
+import { CatalogPage } from './pages/CatalogPage';
 
 const App = () => {
   return (
-    <div className="App">
-      <Header />
-      <ContentContainer />
-      <Footer />
-    </div>
+      <div className="App">
+        <Header />
+        <CatalogPage />
+        <Footer />
+      </div>
   );
 }
 
