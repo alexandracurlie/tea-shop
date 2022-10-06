@@ -14,7 +14,7 @@
             "description": "strong reach taste and aroma Shu pu-erh",
             "type": "Black",
             "price": 6,
-            "img": "http://localhost:3000/data.json/catalog/2.webp"
+            "img": "http://localhost:3000/catalog/2.webp"
         },
         {
             "id": "003",
@@ -22,7 +22,7 @@
             "description": "highly fermented oolong with a unique aroma and flavor",
             "type": "Black",
             "price": 4,
-            "img": "http://localhost:3000/data.json/catalog/3.webp"
+            "img": "http://localhost:3000/catalog/3.webp"
         },
         {
             "id": "004",
@@ -30,7 +30,7 @@
             "description": "the most delicate taste of honey, vanilla and fruits",
             "type": "Green",
             "price": 5,
-            "img": "http://localhost:3000/data.json/catalog/4.webp"
+            "img": "http://localhost:3000/catalog/4.webp"
         },
         {
             "id": "005",
@@ -38,7 +38,7 @@
             "description": "delicate taste of the tea with dried fruits and wood with a shade of smokes",
             "type": "Green",
             "price": 4,
-            "img": "http://localhost:3000/data.json/catalog/5.webp"
+            "img": "http://localhost:3000/catalog/5.webp"
         },
         {
             "id": "006",
@@ -54,7 +54,7 @@
             "description": "caramel and nuts aroma",
             "type": "Black",
             "price": 3,
-            "img": "http://localhost:3000/data.json/catalog/7.webp"
+            "img": "http://localhost:3000/catalog/7.webp"
         },
         {
             "id": "008",
@@ -62,7 +62,7 @@
             "description": "rich and fresh taste with sweet peach aroma",
             "type": "Green",
             "price": 5,
-            "img": "http://localhost:3000/data.json/catalog/8.webp"
+            "img": "http://localhost:3000/catalog/8.webp"
         },
         {
             "id": "009",
@@ -70,7 +70,7 @@
             "description": "fruit and floral aroma",
             "type": "Black",
             "price": 3,
-            "img": "http://localhost:3000/data.json/catalog/9.webp"
+            "img": "http://localhost:3000/catalog/9.webp"
         },
         {
             "id": "010",
@@ -78,7 +78,7 @@
             "description": "astringent, intense, rich aroma with strawberry",
             "type": "Green",
             "price": 4,
-            "img": "http://localhost:3000/data.json/catalog/10.webp"
+            "img": "http://localhost:3000/catalog/10.webp"
         },
         {
             "id": "011",
@@ -86,7 +86,7 @@
             "description": "green oolong with jasmin, rose and cherry",
             "type": "Green",
             "price": 6,
-            "img": "http://localhost:3000/data.json/catalog/11.webp"
+            "img": "http://localhost:3000/catalog/11.webp"
         },
         {
             "id": "012",
@@ -94,7 +94,7 @@
             "description": "japanese fresh floral green tea with mint",
             "type": "Green",
             "price": 4,
-            "img": "http://localhost:3000/data.json/catalog/12.webp"
+            "img": "http://localhost:3000/catalog/12.webp"
         },
         {
             "id": "013",
@@ -102,7 +102,7 @@
             "description": "osmanthus and daylily",
             "type": "Green",
             "price": 6,
-            "img": "http://localhost:3000/data.json/catalog/13.webp"
+            "img": "http://localhost:3000/catalog/13.webp"
         },
         {
             "id": "014",
@@ -110,7 +110,7 @@
             "description": "sweet pure taste combines the floral shades",
             "type": "Black",
             "price": 4,
-            "img": "http://localhost:3000/data.json/catalog/14.webp"
+            "img": "http://localhost:3000/catalog/14.webp"
         },
         {
             "id": "015",
@@ -118,7 +118,7 @@
             "description": "spicy biscuit flavor with chocolate, dried fruits, cranberries and juniper",
             "type": "Black",
             "price": 5,
-            "img": "http://localhost:3000/data.json/catalog/15.webp"
+            "img": "http://localhost:3000/catalog/15.webp"
         }
     ]
 }

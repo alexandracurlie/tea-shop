@@ -10,7 +10,7 @@ export const Bar = ({buttons}: Props) => {
   return (
     <StyledBar>
       <Row>
-        { buttons.map(item => <Button key={item}>{item}</Button> )}
+        { buttons.map(item => <Button key={item}>{item}</Button>) }
       </Row>
       <Row>
         <Button>Sort</Button>
