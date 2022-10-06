@@ -1,19 +1,23 @@
-import React from 'react';
+import React  from 'react';
 import styled from 'styled-components';
 import { Button } from '../Button/Button';
 
 type Props = {
   buttons: string[],
+  onClick: (param: string, value: string) => void,
 }
 
-export const Bar = ({buttons}: Props) => {
+export const Bar = ({ buttons, onClick }: Props) => {
   return (
     <StyledBar>
       <Row>
-        { buttons.map(item => <Button key={item}>{item}</Button>) }
+        { buttons.map(item =>
+          <Button key={item} onClick={() => onClick("filter", item)}>
+            {item}
+          </Button>) }
       </Row>
       <Row>
-        <Button>Sort</Button>
+        <Button onClick={() => onClick("sortBy", "popular")}>Sort</Button>
       </Row>
     </StyledBar>
   )

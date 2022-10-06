@@ -5,11 +5,12 @@ import { Colors, Shadows } from '../../styles/Colors';
 type Props = {
   children: string,
   type?: 'button' | 'submit',
+  onClick: () => void,
 }
 
-export const Button = ({ children, type = 'button' }: Props) => {
+export const Button = ({ children, onClick, type = 'button' }: Props) => {
   return (
-    <StyledButton type={type}>
+    <StyledButton type={type} onClick={onClick}>
       { children }
     </StyledButton>
   )

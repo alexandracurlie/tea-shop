@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { CatalogItem } from '../../types';
+import { filterItems, sortItems } from '../../helpers/helpers';
 
 type CatalogState = {
   catalog: CatalogItem[];
@@ -7,21 +8,26 @@ type CatalogState = {
   error: string | null;
 };
 
+type Params = {
+  filter: string,
+  sortBy: string,
+}
+
 const initialState: CatalogState = {
   catalog: [],
   loading: false,
   error: null,
 };
 
-export const fetchCatalog = createAsyncThunk<CatalogItem[], undefined, { rejectValue: string }>(
+export const fetchCatalog = createAsyncThunk<CatalogItem[], Params, { rejectValue: string }>(
   'catalog/fetchCatalog',
-  async (_, { rejectWithValue }) => {
+  async (params, { rejectWithValue }) => {
       const response = await fetch('http://localhost:3000/data.json');
 
       if (!response.ok) rejectWithValue("Something somewhere went terribly wrong... Check server");
 
       const data = await response.json();
-      return data.catalog;
+      return filterItems(sortItems(data.catalog, params.sortBy), params.filter);
   }
 )
 
