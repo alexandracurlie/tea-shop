@@ -1,37 +1,38 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
   return (
-    <StHeader>
-      <SNav>
+    <Container>
+      <Navigation>
         <div>
           logo
         </div>
-        <ul>
+        <Menu>
           <li>
-            <a>Catalog</a>
+            <NavLink to={'/'}>Catalog</NavLink>
           </li>
           <li>
-            <a>Contacts</a>
+            <NavLink to={'/contacts'}>Contacts</NavLink>
           </li>
           <li>
-            <a>Cart</a>
+            <NavLink to={'/cart'}>Cart</NavLink>
           </li>
-        </ul>
-      </SNav>
-    </StHeader>
+        </Menu>
+      </Navigation>
+    </Container>
   )
 }
 
-const StHeader = styled.header`
+const Container = styled.header`
   display: flex;
   min-height: 60px;
   width: 100%;
   border-bottom: 1px solid #c8c8c8;
 `;
 
-const SNav = styled.nav`
+const Navigation = styled.nav`
   display: flex;
   justify-content: space-between;
   flex: 1;
@@ -42,11 +43,11 @@ const SNav = styled.nav`
     align-items: center;
     flex: 2;
   }
-  
-  & ul {
+`;
+
+const Menu = styled.ul`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex: 3;
-  }
 `;
