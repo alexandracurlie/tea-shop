@@ -1,51 +1,53 @@
-import React, { useState } from 'react';
+import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { Colors, Shadows } from '../../styles/Colors';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks/hooks';
+import { addItem, decreaseCount } from '../../redux/slices/cartSlice';
+import { countItems } from '../../helpers/helpers';
+import { CatalogItem } from '../../types';
 
 type Props = {
-  id?: string | number,
-  title: string,
-  description: string,
-  price: number,
-  type?: string,
-  img: string,
+  item: CatalogItem;
 }
 
-export const Card = ({ title, description, price, img }: Partial<Props>) => {
-  const [count, setCount] = useState(0)
+export const Card = ({ item }: Props) => {
+  const dispatch = useAppDispatch();
 
-  const addToCart = () => {
-    setCount(count + 1)
-  }
+  const { cart } = useAppSelector(state => state.cart);
+  const count = useMemo(() => countItems(cart, item.id), [cart, item.id])
+
+  const increase = () => {
+    dispatch(addItem(item))
+  };
 
   const decrease = () => {
-    setCount(count - 1)
-  }
+    dispatch(decreaseCount(item.id))
+  };
 
   return (
     <Container>
-      <img src={img}
-           alt={title}
+      <img src={item.img}
+           alt={item.title}
            width={200}
            height={200}
       />
       <div className={'card_body'}>
-        <h5 className={'card_title'}>{ title }</h5>
-        <p className={'card_description'}>{ description }</p>
+        <h5 className={'card_title'}>{ item.title }</h5>
+        <p className={'card_description'}>{ item.description }</p>
         <p className={'card_price'}>
           <span>&#8364; </span>
-          { price }
+          { item.price }
           <span> oz</span>
         </p>
       </div>
       <div className={'buttons_container'}>
         {!count ? (
-          <button className={'add_button'} onClick={addToCart}>add</button>
+          <button className={'add_button'} onClick={increase}>add</button>
         ) : (
           <React.Fragment>
             <button className={'count'} onClick={decrease}>-</button>
             <p>{count}</p>
-            <button className={'count'} onClick={addToCart}>+</button>
+            <button className={'count'} onClick={increase}>+</button>
           </React.Fragment>
         )}
       </div>

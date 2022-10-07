@@ -30,7 +30,7 @@ export const CatalogPage = () => {
     <ContentContainer>
       <Bar buttons={['All', 'Black', 'Green']} onClick={onClick}/>
       <Catalog>
-        { catalog.map(item => <Card key={item.id} {...item} />) }
+        { catalog.map(item => <Card key={item.id} item={item} />) }
       </Catalog>
     </ContentContainer>
   )
