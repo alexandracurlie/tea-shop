@@ -1,6 +1,6 @@
-import { CatalogItem } from '../types';
+import { ItemProps } from '../types';
 
-export const sortItems = (items: CatalogItem[], sortBy: string) => {
+export const sortItems = (items: ItemProps[], sortBy: string) => {
   switch (sortBy) {
     case "expensive":
       return items.sort((item1, item2) => item2.price - item1.price);
@@ -11,9 +11,9 @@ export const sortItems = (items: CatalogItem[], sortBy: string) => {
   }
 };
 
-export const filterItems = (items: CatalogItem[], filter: string) =>
+export const filterItems = (items: ItemProps[], filter: string) =>
   items.filter((item) => filter === "All" ? item : item.type === filter);
 
-export const countItems = (items: CatalogItem[], id: string) => items.filter((good) => good.id === id).length;
+export const countItems = (items: ItemProps[], id: string) => items.filter((good) => good.id === id).length;
 
-export const getTotalPrice = (items: CatalogItem[]) => items.reduce((acc, item) => acc + item.price, 0);
+export const getTotalPrice = (items: ItemProps[]) => items.reduce((acc, item) => acc + item.price, 0);

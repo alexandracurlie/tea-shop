@@ -1,6 +1,6 @@
 export type TeaCategory = "Black" | "Green";
 
-export type CatalogItem = {
+export type ItemProps = {
   id: string;
   title: string;
   description: string;
