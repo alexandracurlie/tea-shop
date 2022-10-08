@@ -8,3 +8,15 @@ export type ItemProps = {
   price: number;
   img: string;
 };
+
+export type FuncModule = {
+  increase: () => void;
+  decrease: () => void;
+  remove: () => void;
+}
+
+export type CardProps = {
+  item: ItemProps;
+  func: FuncModule;
+  count: number
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import styled from 'styled-components';
 import { useAppDispatch, useAppSelector } from '../redux/hooks/hooks';
 import { fetchCatalog } from '../redux/slices/catalogSlice';
@@ -23,7 +23,7 @@ export const CatalogPage = () => {
       <Title title={'Catalog'} subtitle={"Exclusive Tastes"}/>
       <Bar />
       <Catalog>
-        { catalog.map(item => <Card key={item.id} item={item} />) }
+        { items && items.map(item => (<Card key={item.id} item={item} type={'catalogItem'}/>)) }
       </Catalog>
     </ContentContainer>
   )
@@ -31,6 +31,7 @@ export const CatalogPage = () => {
 
 const Catalog = styled.div`
   display: flex;
+  justify-content: space-evenly;
   flex: 1;
   flex-wrap: wrap;
 `;

@@ -2,13 +2,13 @@ import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { useAppSelector } from '../redux/hooks/hooks';
 import { ContentContainer } from '../components/ContentContainer/ContentContainer';
+import { Card } from '../components/Card/Card';
 import { Title } from '../components/Title/Title';
-import { CartItem } from '../components/CartItem';
 import { Button } from '../components/Button/Button';
 import { getTotalPrice } from '../helpers/helpers';
 import { Shadows } from '../styles/Colors';
 
-const CartTitle = {
+const CartSubtitle = {
   empty: "oh, no! the cart is empty!",
   full: "what an awesome choice!",
 };
@@ -17,15 +17,19 @@ export const CartPage = () => {
   const { cart } = useAppSelector(state => state.cart);
   const uniqueItems = Array.from(new Set(cart));
 
-  const subtitle = useMemo(() => cart.length === 0 ? CartTitle.empty : CartTitle.full, [cart])
-  const total = useMemo(() => getTotalPrice(cart), [cart])
+  const isEmpty = cart.length === 0;
+
+  const subtitle = useMemo(() => isEmpty ? CartSubtitle.empty : CartSubtitle.full, [cart, isEmpty])
+  const total = useMemo(() => getTotalPrice(cart), [cart]);
 
   return (
     <ContentContainer>
       <Title title={'Welcome to your Cart'} subtitle={subtitle}/>
       <Cart>
         <Wrapper>
-          {uniqueItems && uniqueItems.map(item => (<CartItem key={item.id} item={item} />))}
+          { uniqueItems && uniqueItems.map(item =>
+            (<Card key={item.id} item={item} type={'cartItem'} />))
+          }
         </Wrapper>
       </Cart>
 
@@ -34,7 +38,11 @@ export const CartPage = () => {
           Total<span>&#8364;</span>
           { total }
         </p>
-        <Button onClick={() => console.log()}>Continue</Button>
+        <Button
+          name={'Continue'}
+          disabled={isEmpty}
+          onClick={() => console.log('Continue')}
+        />
       </Total>
     </ContentContainer>
   )
@@ -43,7 +51,6 @@ export const CartPage = () => {
 const Cart = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 30px;
 `;
 
 const Wrapper = styled.div`
@@ -59,7 +66,6 @@ const Total = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 50px 0;
-
   
   & .total {
     display: flex;
