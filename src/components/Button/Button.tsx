@@ -3,15 +3,17 @@ import styled from 'styled-components';
 import { Colors, Shadows } from '../../styles/Colors';
 
 type Props = {
-  children: string,
+  name?: string;
+  children?: any,
   type?: 'button' | 'submit',
-  onClick: () => void,
+  onClick?: () => void,
+  disabled?: boolean;
 }
 
-export const Button = ({ children, onClick, type = 'button' }: Props) => {
+export const Button = ({ ...props}: Props) => {
   return (
-    <StyledButton type={type} onClick={onClick}>
-      { children }
+    <StyledButton { ...props }>
+      { props.name || props.children }
     </StyledButton>
   )
 }
@@ -32,6 +34,11 @@ const StyledButton = styled.button`
 
   &:hover, &:focus {
     box-shadow: ${Shadows.in};
-    color:${Colors.pink};
-  },
+    color: ${Colors.pink};
+  }
+  
+  &:disabled {
+    box-shadow: ${Shadows.out};
+    color: ${Colors.gray};
+  }
 `;
