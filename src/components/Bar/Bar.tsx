@@ -3,9 +3,7 @@ import styled from 'styled-components';
 import { useAppDispatch } from '../../redux/hooks/hooks';
 import { setFilter, setSortBy } from '../../redux/slices/catalogSlice';
 import { Button } from '../Button/Button';
-import { TeaCategory } from '../../types';
-
-type Filter = "All" | TeaCategory;
+import { Filter } from '../../types';
 
 const filters: Filter[] = ['All', 'Black', 'Green']
 

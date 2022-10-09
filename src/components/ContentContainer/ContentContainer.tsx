@@ -17,11 +17,9 @@ const Container = styled.div`
   display: flex;
   flex: 1;
   padding: 20px 0;
-  //background-color: rebeccapurple;
 `
 const Content = styled.div`
   height: 100%;
   width: 80%;
   margin: 0 auto;
-  //background-color: yellowgreen;
 `;

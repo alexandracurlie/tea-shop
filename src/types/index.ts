@@ -1,5 +1,7 @@
 export type TeaCategory = "Black" | "Green";
 
+export type Filter = "All" | TeaCategory;
+
 export type ItemProps = {
   id: string;
   title: string;
